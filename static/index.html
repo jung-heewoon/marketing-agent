@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>유튜브 댓글 에이전트</title>
+  <link rel="stylesheet" href="/static/style.css?v=7" />
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">TRACK 2 · 마케팅 AI 에이전트</p>
+      <h1>유튜브 댓글 에이전트</h1>
+    </div>
+    <div class="header-side">
+      <p id="quota">오늘 0 / 10</p>
+      <p id="health" class="health">모델 확인 중</p>
+    </div>
+  </header>
+  <main>
+    <section class="col" aria-labelledby="step1-title">
+      <div class="col-head">
+        <span class="num">1</span>
+        <div>
+          <h2 id="step1-title">영상 불러오기</h2>
+          <p>지정 채널 5개의 최신 영상입니다.</p>
+        </div>
+      </div>
+      <div class="row">
+        <button id="fetch" type="button">영상 불러오기</button>
+        <button id="rising" type="button" class="ghost">뜨기 직전 찾기</button>
+      </div>
+      <p id="fetch-note" class="note"></p>
+      <div id="videos" class="videos"></div>
+    </section>
+
+    <section class="col" aria-labelledby="step2-title">
+      <div class="col-head">
+        <span class="num">2</span>
+        <div>
+          <h2 id="step2-title">영상 선택</h2>
+          <p>영상을 고른 뒤 초안 만들기를 누르세요.</p>
+        </div>
+      </div>
+      <form id="link-form" class="link-form">
+        <input id="link" type="text" placeholder="영상 링크 직접 입력" autocomplete="off" />
+        <button type="submit" class="ghost">열기</button>
+      </form>
+      <article id="picked" class="picked empty">왼쪽에서 영상을 고르세요.</article>
+      <button id="livewiki-login" type="button" class="ghost">LiveWiki 로그인</button>
+      <button id="make-draft" type="button" disabled>초안 만들기</button>
+      <p id="draft-disclaimer" class="note">이 초안은 실제 이용 후기가 아닙니다.</p>
+      <p id="concern" class="concern"></p>
+      <label class="field-label" for="comment">댓글 초안</label>
+      <textarea id="comment" rows="5" placeholder="댓글 초안이 여기에 들어갑니다."></textarea>
+      <div class="row split">
+        <p id="chars" class="chars">0자</p>
+        <button id="redo" type="button" class="ghost" disabled>다시 만들기</button>
+      </div>
+      <p id="evidence" class="evidence"></p>
+      <p id="draft-status" class="note"></p>
+    </section>
+
+    <section class="col" aria-labelledby="step3-title">
+      <div class="col-head">
+        <span class="num">3</span>
+        <div>
+          <h2 id="step3-title">댓글 달기</h2>
+          <p>크롬 프로필이 열리고 한 글자씩 입력합니다.</p>
+        </div>
+      </div>
+      <fieldset class="profiles">
+        <legend>크롬 프로필</legend>
+        <div id="profiles"></div>
+      </fieldset>
+      <button id="login" type="button" class="ghost">선택한 프로필 로그인</button>
+      <ol id="steps" class="steps">
+        <li data-step="프로필 여는 중">프로필 여는 중</li>
+        <li data-step="입력 중">입력 중</li>
+        <li data-step="게시 완료 · 댓글 보기">게시 완료 · 댓글 보기</li>
+      </ol>
+      <button id="post" type="button" disabled>댓글 달기</button>
+      <p id="post-status" class="note"></p>
+      <img id="shot" class="shot" alt="실패 화면 캡처" hidden />
+      <h3>기록</h3>
+      <div id="log" class="log-box"></div>
+    </section>
+  </main>
+  <script src="/static/app.js?v=16"></script>
+</body>
+</html>

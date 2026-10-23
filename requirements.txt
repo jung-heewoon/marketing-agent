@@ -1,0 +1,9 @@
+fastapi==0.157.0
+uvicorn==0.54.0
+httpx==0.28.1
+pyyaml==6.0.3
+playwright==1.64.0
+youtube-transcript-api==1.2.4
+youtube-comment-downloader==0.1.84
+pytest==9.1.1
+laya>=0.3.5

@@ -1,0 +1,72 @@
+strata:
+  base_url: http://127.0.0.1:8080
+  model: qwen3.8-flash-next-iq2_xs
+  timeout_sec: 180
+
+# strata 가 기본이다. gemini 로 바꾸려면 provider 를 gemini 로 두고 GEMINI_API_KEY 를 넣는다.
+llm:
+  provider: strata
+  gemini_base_url: https://generativelanguage.googleapis.com/v1beta/openai
+  gemini_model: gemini-2.5-flash
+
+server:
+  host: 127.0.0.1
+  port: 7860
+
+comment:
+  min_chars: 40
+  max_chars: 120
+  brand: 운명원
+  max_retries: 2
+
+limits:
+  daily_max_comments: 10
+
+livewiki:
+  home_url: https://livewiki.com/ko/
+  dir: data/chrome/livewiki
+
+laya:
+  enabled: true
+  device: cpu
+  repo: convaiinnovations/laya
+  subfolder: multilingual
+  candidates: 5
+
+profiles:
+  - id: youtube1
+    label: 유튜브1
+    dir: data/chrome/youtube1
+  - id: youtube2
+    label: 유튜브2
+    dir: data/chrome/youtube2
+  - id: youtube3
+    label: 유튜브3
+    dir: data/chrome/youtube3
+
+channels:
+  - id: UCxlc0Ky0aWoD8uI09ad44Tg
+    name: 외롭여
+  - id: UC-ee_ziASM251TMXe3P3VZA
+    name: 리즈시절 LizTV
+  - id: UC09L3JxGVcn7SKLa-pjTEmw
+    name: 러브커넥트 유지연
+  - id: UCVdtDW-HF4KluixGaBAcI4w
+    name: 연애데이터 노노
+  - id: UCkGl2jieOVhGiHPdXF77Yyw
+    name: 심리조각
+
+# 본인 테스트 영상 ID. 지정 채널이 아니어도 이 목록은 게시할 수 있다.
+test_video_ids: []
+
+# 비워 두면 환경변수 YOUTUBE_API_KEY 를 본다. 없어도 목록·자막·초안은 동작한다.
+youtube_api_key: ""
+
+videos_per_channel: 5
+type_delay_ms: 60
+hold_open_sec: 8
+
+rising:
+  min_views: 1000
+  max_views: 5000
+  min_per_hour: 150
